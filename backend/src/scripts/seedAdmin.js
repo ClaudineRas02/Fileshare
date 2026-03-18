@@ -1,5 +1,5 @@
-import { pool } from '../src/config/db.js';
-import { env } from '../src/config/env.js';
+import { pool } from '../config/db.js';
+import { env } from '../config/env.js';
 import bcrypt from 'bcrypt'
 
 const required = ['adminName', 'adminEmail', 'adminPassword'];
