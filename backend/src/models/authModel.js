@@ -1,10 +1,7 @@
-import { pool } from "../config/db.js"
+import { pool } from "../config/db.js";
+
 export async function findUser(email) {
-    const query = 'SELECT password FROM users WHERE email=$1'
-    try{
-        const { user } = await pool.query(query,[email])
-        return user[0] ?? null
-    }catch(error){
-        throw error
-    }
+  const query = "SELECT id, email, password FROM users WHERE email = $1";
+  const { rows } = await pool.query(query, [email]);
+  return rows[0] ?? null;
 }
