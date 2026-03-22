@@ -46,7 +46,13 @@ npm install
 
 Renommer le fichier `.env.exemple` à la racine du projet et changer les valeurs selon vos configurations locales.
 
-4. 🚀 Lancement
+4.Créer un admin via un script seed(données de test)
+
+```
+npm run seed
+```
+
+5. 🚀 Lancement
 
 Dans frontend/
 ```
