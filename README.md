@@ -51,8 +51,12 @@ Renommer le fichier `.env.exemple` à la racine du projet et changer les valeurs
 ```
 npm run seed
 ```
-
-5. 🚀 Lancement
+5. Configuration de la BD (PostgreSQL)
+```
+CREATE DATABASE qrdb;
+psql -U postgres -d qrdb -f schema.sql
+```
+6. 🚀 Lancement
 
 Dans frontend/
 ```
