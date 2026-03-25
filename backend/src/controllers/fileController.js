@@ -1,6 +1,8 @@
 import { savefileService } from "../services/fileService.js";
 import { createQrcodeService } from "../services/qrService.js";
 import { generateToken } from "../utils/token.js";
+import { env } from "../config/env.js";
+import QRCODE from "qrcode"
 
 export async function uploadController(req, res, next) {
   try {
@@ -27,10 +29,16 @@ export async function uploadController(req, res, next) {
         token
     })
 
+    //creation de codeqr visuelle-> url(pc et phone meme reseau)
+    const url = `${env.appBaseUrl}/q/${token}`
+    const qrcode = await QRCODE.toDataURL(url)
+
+
     res.json({
       ok: true,
       file: result,
-      qr
+      qr,
+      qrcode
     });
 
   } catch (error) {
