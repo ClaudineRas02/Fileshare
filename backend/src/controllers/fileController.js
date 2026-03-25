@@ -30,7 +30,7 @@ export async function uploadController(req, res, next) {
     })
 
     //creation de codeqr visuelle-> url(pc et phone meme reseau)
-    const url = `${env.appBaseUrl}/q/${token}`
+    const url = `${env.appBaseUrl}/api/f/${token}`
     const qrcode = await QRCODE.toDataURL(url)
 
 
